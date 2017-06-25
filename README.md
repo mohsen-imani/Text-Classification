@@ -27,10 +27,10 @@ In the training phase, We select first 500 files of each class, and split the fi
 In the testing phase: we pick files randomly from the remaining files from the training phase, function get_file gives us the files. The same as before, we clean the file with clean_text function, after that we comput the probability of each word in this file for all classes
 
 ```sh
-  $ For each class c:
-       $  Pc = 0
-       $  For each word in cleaned_file:
-                $ Pc = Pc + log(P(word| c))
+  For each class c:
+        Pc = 0
+        For each word in cleaned_file:
+                Pc = Pc + log(P(word| c))
        
 ```
 Function get_probability gives us the probability for a given class. The predicated class would be the one has the highest probability Pc .

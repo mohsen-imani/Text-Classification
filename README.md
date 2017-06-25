@@ -25,13 +25,14 @@ We convert all the uppercase letters to lowercase ones. clean_text function does
 In the training phase, We select first 500 files of each class, and split the file with character space. We count the number of occurrences of each word in class’s files and put them in a dictionary. After the training phase, we get totally around 170,000 different words in all classes (for 10,000 files).
 
 In the testing phase: we pick files randomly from the remaining files from the training phase, function get_file gives us the files. The same as before, we clean the file with clean_text function, after that we comput the probability of each word in this file for all classes
-'''sh
+
+```sh
   $ For each class c:
        $  Pc = 0
        $  For each word in cleaned_file:
                 $ Pc = Pc + log(P(word| c))
        
- '''
+```
 Function get_probability gives us the probability for a given class. The predicated class would be the one has the highest probability Pc .
 
 The accuracy rate for this code is 87%.
